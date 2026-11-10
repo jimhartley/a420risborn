@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or site.tagline }}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/lightbox.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span class="brand__kicker">Build diary</span>
+        <span class="brand__title">{{ site.title | replace("420R", '<em>420R</em>') | safe }}</span>
+      </a>
+      <nav>
+        <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Progress</a>
+        <a href="/log/" {% if page.url.startsWith("/log/") %}aria-current="page"{% endif %}>Build log</a>
+        <a href="/documents/" {% if page.url == "/documents/" %}aria-current="page"{% endif %}>Documents</a>
+        <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>The car</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">© {{ site.author }} · {{ site.car.model }} build</div>
+  </footer>
+</body>
+</html>

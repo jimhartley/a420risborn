@@ -1,0 +1,11 @@
+---
+title: Workshop preparation - Building the nest!
+stage: before-the-build
+---
+Waiting for the components to arrive can be frustrating, but, can also be part of the fun. Planning the workshop, for me, is a huge part of the project. Having some space and a fancy coloured floor creates a feeling of readiness but in the drawers and behind the cabinets doors is where the time goes. I 3D print all sorts of stuff. I don't need much of an excuse to fire up the Macbook and design a solution to a problem that you never actually knew you had. This project is like a 3D printer's dream come true. Sure, there will be great opportunities to create solutions through the build but, just in terms of tool organisation, it's been fantastic. I know that I have done far more preparation than is needed to build a Caterham but, that’s just the way I am.
+
+{% image "images/workshop/garage.jpg", "The garage workshop with grey cabinets along one wall and an orange-bordered black and white chequered floor in the middle", "The nest: cabinets in, and a floor that matches the car." %}
+
+{% image "images/workshop/tool-drawer.jpg", "Open workbench drawer with sockets, spanners and torque wrenches laid out in fitted foam, above a pegboard of hand tools", "I just love having tools organised" %}
+
+First job was clearing out as much stuff as I could. A storage container in a secure compound down the road was surprisingly cheap and allowed me to store away the things that would get me in serious bother with Mrs H if I binned, but that haven’t been used since they were new! A skip on the driveway for the new kitchen renovation had space left over… I was brutal and got rid of all those bits that I saved ‘just in case’ years ago (surprising how many of them I have since thought ‘I’m sure I’ve got one of those somewhere’). The new kitchen allowed me to get rid of the old tumble drier and our daughter wanted the chest freezer. The old fridge is not just a normal fridge anyway. I bought it and adapted it to be a temperature controlled cabinet for brewing beer under pressure. Now, entering the cold of the British winter, it is a nice 24° storage cupboard for grommets, hoses, aerosol spray cans etc. The things that work best when they’re not cold (unfortunately there is no room for me, I will need another plan for keeping me warm when the car arrives next week).

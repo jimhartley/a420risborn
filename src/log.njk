@@ -1,0 +1,11 @@
+---
+layout: base.njk
+title: Build log
+permalink: /log/
+---
+<header class="page-head">
+  <h1>Build log</h1>
+  <p class="meta">{{ collections.posts.length }} entries{% if collections.posts | sumCost %} · {{ collections.posts | sumCost | money }}{% endif %}</p>
+</header>
+{% set entries = collections.posts | latest(10000) %}
+{% include "post-list.njk" %}

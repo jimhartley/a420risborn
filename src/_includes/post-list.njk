@@ -1,0 +1,14 @@
+{% if entries.length %}
+<ul class="post-list">
+  {% for p in entries %}
+  {% set st = p.data.stage | stageBySlug %}
+  <li>
+    <time datetime="{{ p.date | isoDate }}">{{ p.date | readableDate }}</time>
+    <a href="{{ p.url }}">{{ p.data.title }}</a>
+    <span class="pill pill--{{ st.status }}">{{ st.name }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">Nothing logged yet.</p>
+{% endif %}

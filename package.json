@@ -1,0 +1,17 @@
+{
+  "name": "caterham-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A static blog cataloguing my Caterham Seven build",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site .cache"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "@11ty/eleventy-img": "^7.1.1"
+  }
+}

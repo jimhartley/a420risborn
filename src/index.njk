@@ -1,0 +1,54 @@
+---
+layout: base.njk
+---
+{% set doneCount = 0 %}
+{% for s in stages %}{% if s.status == "done" %}{% set doneCount = doneCount + 1 %}{% endif %}{% endfor %}
+{% set pct = (doneCount / stages.length * 100) | round %}
+
+{% hero "images/car/front-three-quarter.jpg", "Sunset Riot orange Caterham Seven 420R with black stripes, front three-quarter view" %}
+
+<section class="hero">
+  <h1>It’s all about my Caterham 420R</h1>
+  <div class="intro">
+    <p>Building a car has always been a dream of mine. The achievement, the challenge, planning, spannering, head scratching, that first engine start, and then, one day, the thrill of blasting round a track or country road, only to return home and start tinkering all over again.</p>
+    <p>Building a car from donor parts is not for me. I want new, everything new, every nut, bolt and hose clip, new. Caterham is the logical choice (at least now that Ultima is not a self build option). Having recently had a driver training day in one of these on a track, I have completely fallen for their charms and am really looking forward to building and owning one of these classics.</p>
+  </div>
+  <div class="stats">
+    <div><strong>{{ pct }}%</strong><span>complete</span></div>
+    <div><strong>{{ doneCount }}/{{ stages.length }}</strong><span>stages done</span></div>
+    <div><strong>{{ collections.posts.length }}</strong><span>log entries</span></div>
+  </div>
+
+  <div class="track" role="progressbar" aria-valuenow="{{ pct }}" aria-valuemin="0" aria-valuemax="100" aria-label="Build progress: {{ pct }}% complete">
+    <div class="track__car" style="--pct: {{ pct }}"><img class="car-icon" src="/assets/img/car-side.png" alt="" width="400" height="149"></div>
+    <div class="track__road">
+      <span class="track__done" style="width: {{ pct }}%"></span>
+      {% for s in stages %}<span class="track__tick{% if s.status == 'done' %} is-done{% endif %}" style="left: {{ (loop.index / stages.length * 100) }}%" title="{{ s.name }}"></span>{% endfor %}
+    </div>
+    <div class="track__labels"><span>Kit arrives</span><span>On the road 🏁</span></div>
+  </div>
+</section>
+
+<h2>Build stages</h2>
+<ol class="stages">
+  {% for s in stages %}
+  {% set sp = collections.posts | byStage(s.slug) %}
+  <li class="stage stage--{{ s.status }}">
+    <a href="/stages/{{ s.slug }}/">
+      <span class="stage__num">{{ loop.index }}</span>
+      <span class="stage__body">
+        <span class="stage__name">{{ s.name }}</span>
+        <span class="stage__desc">{{ s.description }}</span>
+      </span>
+      <span class="stage__meta">
+        <span class="pill pill--{{ s.status }}">{{ s.status | replace("-", " ") }}</span>
+        <small>{{ sp.length }} entr{{ "y" if sp.length == 1 else "ies" }}</small>
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+
+<h2>Latest entries</h2>
+{% set entries = collections.posts | latest(5) %}
+{% include "post-list.njk" %}

@@ -1,0 +1,19 @@
+---
+layout: base.njk
+pagination:
+  data: stages
+  size: 1
+  alias: stage
+permalink: "/stages/{{ stage.slug }}/"
+eleventyComputed:
+  title: "{{ stage.name }}"
+---
+{% set sp = collections.posts | byStage(stage.slug) %}
+<header class="page-head">
+  <span class="pill pill--{{ stage.status }}">{{ stage.status | replace("-", " ") }}</span>
+  <h1>{{ stage.name }}</h1>
+  <p>{{ stage.description }}</p>
+  <p class="meta">{{ sp.length }} entr{{ "y" if sp.length == 1 else "ies" }}{% if sp | sumCost %} · {{ sp | sumCost | money }}{% endif %}</p>
+</header>
+{% set entries = sp %}
+{% include "post-list.njk" %}

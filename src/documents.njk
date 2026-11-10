@@ -1,0 +1,36 @@
+---
+layout: base.njk
+title: Documents
+permalink: /documents/
+---
+<header class="page-head">
+  <h1>Documents</h1>
+  <p>Manuals, guidance and reference material used during the build.</p>
+</header>
+
+<nav class="doc-jump" aria-label="Document categories">
+  {% for c in documents %}<a href="#{{ c.slug }}">{{ c.name }} <span>{{ c.files.length }}</span></a>{% endfor %}
+</nav>
+
+{% for c in documents %}
+<section class="doc-section" id="{{ c.slug }}">
+  <h2>{{ c.name }}</h2>
+  {% if c.description %}<p class="meta">{{ c.description }}</p>{% endif %}
+  {% if c.files.length %}
+  <ul class="doc-list">
+    {% for f in c.files %}
+    <li>
+      <span class="doc-type doc-type--{{ f.type | lower }}">{{ f.type }}</span>
+      <span class="doc-body">
+        <a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.title }}</a>
+        {% if f.description %}<span class="doc-desc">{{ f.description }}</span>{% endif %}
+      </span>
+      <span class="doc-size">{{ f.size }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">Nothing here yet.</p>
+  {% endif %}
+</section>
+{% endfor %}
