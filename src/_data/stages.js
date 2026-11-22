@@ -2,9 +2,9 @@
 // status: "not-started" | "in-progress" | "done"
 // Each post's front matter `stage:` must match one of these slugs.
 export default [
-  { slug: "before-the-build", name: "Before the build", status: "in-progress",
+  { slug: "before-the-build", name: "Before the build", status: "done",
     description: "Planning, ordering, kit delivery and checking every box." },
-  { slug: "front-end", name: "Front End", status: "not-started",
+  { slug: "front-end", name: "Front End", status: "in-progress",
     description: "Front suspension, steering and brakes." },
   { slug: "engine-gearbox", name: "Engine & Gearbox", status: "not-started",
     description: "Fitting the engine and gearbox." },
