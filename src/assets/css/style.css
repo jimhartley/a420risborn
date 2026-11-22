@@ -234,3 +234,6 @@ main.wrap { padding-block: 2rem 4rem; }
   .lightbox .lb-prev { left: calc(50% - 3.5rem); }
   .lightbox .lb-next { left: calc(50% + .75rem); }
 }
+/* Keep portrait photos in posts to a sensible height, centred */
+.prose figure img { width: auto; max-width: 100%; max-height: 75vh; margin-inline: auto; }
+.prose figcaption { text-align: center; }
