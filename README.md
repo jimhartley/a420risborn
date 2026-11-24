@@ -27,6 +27,18 @@ What I did today…
 
 Put original photos in `src/images/`. They're resized to 600/1200px WebP + JPEG at build time.
 
+## Add a video
+
+Videos must be web-sized MP4s (GitHub refuses files over 100 MB; aim for under ~50 MB).
+A 720p H.264 encode at about 2.8 Mbit/s is roughly 20 MB per minute. Put the file in
+`src/videos/` and add it to a post:
+
+```markdown
+{% video "videos/delivery/delivery-day.mp4", "Description for screen readers", "Optional caption" %}
+```
+
+An optional fourth argument sets a poster image, e.g. `"images/delivery/unloading.jpg"`.
+
 ## Add a document
 
 Drop the file into the right folder under `src/documents/` and it appears on the Documents page:

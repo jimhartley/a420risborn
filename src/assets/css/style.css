@@ -237,3 +237,6 @@ main.wrap { padding-block: 2rem 4rem; }
 /* Keep portrait photos in posts to a sensible height, centred */
 .prose figure img { width: auto; max-width: 100%; max-height: 75vh; margin-inline: auto; }
 .prose figcaption { text-align: center; }
+
+/* Embedded videos ({% video %} shortcode) */
+.prose figure.video video { display: block; width: 100%; max-height: 75vh; aspect-ratio: 16 / 9; background: #000; border-radius: var(--radius); }

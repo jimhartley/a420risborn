@@ -6,6 +6,8 @@ Caterham have been excellent in getting to this point. Sure, the delivery is a c
 
 {% image "images/delivery/unloading.jpg", "Two people wheeling the orange Caterham chassis on mobile axle stands from the van into the garage, with Caterham boxes stacked inside", "Unloading the van." %}
 
+{% video "videos/delivery/delivery-day.mp4", "Video of the Caterham kit being delivered and unloaded into the workshop", "Delivery day, in two minutes." %}
+
 Two of us managed okay, perhaps a third person would have been useful. The Duratec engine came strapped to a plastic pallet. We carried it off the van and it slides around my Tuff-Tile floor without too much effort. No need for the dolly wheels that I thought I might need. The chassis was also relatively easy to manage but the driver explained that the only reason that two of us could manage it alone was that I had the mobile axle stands (CJ Autos). They are much easier than individual axle stands and I have to say, I am very impressed with them. They can be set pretty high (530mm if I remember correctly) but make sure your trolley jack can go high enough to help you get your car back off them one day! They also allow me to manoeuvre the car around the workshop easily, I’ve already found that really useful.
 
 {% image "images/delivery/chassis-arrives.jpg", "The Sunset Riot chassis, still wearing its hood and side screens, being rolled into the workshop on red mobile axle stands", "Moving the car to the mobile axle stands" %}

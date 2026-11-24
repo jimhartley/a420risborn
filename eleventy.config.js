@@ -7,6 +7,7 @@ const stageSlugs = new Set(stages.map((s) => s.slug));
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addWatchTarget("src/assets/");
+  eleventyConfig.addPassthroughCopy("src/videos");
 
   // Documents are copied as-is, never processed as pages; adding one rebuilds the list.
   eleventyConfig.addPassthroughCopy("src/documents", { filter: (p) => !p.endsWith(".gitkeep") && !p.endsWith("meta.json") });
@@ -69,6 +70,24 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("hero", async function (src, alt) {
     const html = await picture(src, alt, { sizes: "(min-width: 1000px) 960px, 100vw", eager: true });
     return `<div class="hero-image">${html}</div>`;
+  });
+
+  // {% video "videos/foo.mp4", "Description", "Optional caption", "images/poster.jpg" %} — paths relative to src/.
+  // The poster is optional; without one the browser shows the video's first frame.
+  // Nothing downloads until the reader presses play.
+  eleventyConfig.addShortcode("video", async function (src, label, caption, poster) {
+    if (label === undefined) throw new Error(`Missing description for video ${src}`);
+    let posterAttr = "";
+    if (poster) {
+      const meta = await Image(path.join("src", poster), {
+        widths: [1280], formats: ["jpeg"], outputDir: "_site/img/", urlPath: "/img/",
+      });
+      posterAttr = ` poster="${meta.jpeg[0].url}"`;
+    }
+    const url = "/" + src.replace(/^\/+/, "");
+    const preload = poster ? "none" : "metadata";
+    const video = `<video controls playsinline preload="${preload}"${posterAttr} aria-label="${label}"><source src="${poster ? url : url + "#t=0.1"}" type="video/mp4"><a href="${url}">Download the video</a></video>`;
+    return `<figure class="video">${video}${caption ? `<figcaption>${caption}</figcaption>` : ""}</figure>`;
   });
 
   // Thumbnail grid. Each item links to the full-size JPEG.
