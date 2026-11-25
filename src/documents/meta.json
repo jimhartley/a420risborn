@@ -6,5 +6,9 @@
   "build-manuals/caterham-assembly-guide-seven-270-360-420-academy-2015.pdf": {
     "title": "Assembly Guide: Seven 270, 360, 420 and Academy, v02.2015.c",
     "description": "The previous edition (2015). Superseded, but extremely valuable alongside the current guide. 220 pages."
+  },
+  "iva/iva-inspection-manual-m1-passenger-vehicles-2025.pdf": {
+    "title": "IVA Inspection Manual: M1 passenger vehicles (DVSA, July 2025)",
+    "description": "Essential alongside the build manual if you plan to register the car for UK roads. 335 pages. Crown copyright, Open Government Licence v3.0; latest version on GOV.UK."
   }
 }
